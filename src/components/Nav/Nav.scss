@@ -1,0 +1,128 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    
+    @include tablet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem;
+    }
+
+    @include desktop {
+        margin: 1rem 5rem 1rem 5rem;
+    }
+
+    &__logo {
+        margin-bottom: 1rem;
+        height: 25px;
+        width: 120px;
+
+        @include tablet {
+            margin: 0 5rem 0 0;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 36px;
+        border-radius: 4px;
+        border: 2px solid $form-outline-color;
+        padding: 0 12px 0 12px;
+        margin-right: 1rem;
+        background: $form-background-color url(../../assets/icons/search.svg) .5rem no-repeat;
+    
+        @include tablet {
+            height: 3rem;
+            background-size: 1.5rem;
+            background-position: 1rem;
+        }
+    
+    }
+
+    &__input::placeholder {
+        padding-left: 1.5rem;
+        color: $primary-font-color;
+        @include mobile-form-input;
+
+        @include tablet {
+            padding-left: 2.5rem;
+            @include form-input;
+        }
+    }
+
+    &__input:focus{
+        outline-color: $active-form-color;
+    }
+
+    &__form {
+        width: 100%;
+        margin-right: 3rem;
+
+        @include tablet {
+            width: 16rem;
+        }
+    }
+
+    &__search {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+
+    &__button {
+        margin-top: 1rem;
+        background: $CTA-color url(../../assets/icons/upload.svg) .5rem no-repeat;
+        font-weight: 700;
+        color: $CTA-font-color;
+        width: 100%;
+        padding: 1rem 32px 1rem 32px;
+        border-radius: 4px;
+        border: none;
+        @include mobile-button;
+
+        @include tablet {
+            margin: 0;
+            width: 16rem;
+        }
+    }
+
+    &__avatar {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: left;
+
+        @include tablet {
+            display: none;
+            height: 3rem;
+            width: 3rem;
+        }
+
+        &--hidden {
+            display: none;
+
+            @include tablet {
+                display: flex;
+                margin-left: 1rem;
+            }
+
+            @include desktop {
+                margin-left: 2rem;
+            }
+        }
+    }
+}

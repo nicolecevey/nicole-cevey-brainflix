@@ -1,0 +1,19 @@
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: $root-font-size;
+}
+
+body {
+    font-family: $font-stack, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
