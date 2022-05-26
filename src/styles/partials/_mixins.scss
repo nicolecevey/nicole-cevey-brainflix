@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+
+//Mobile styles
+@mixin mobile-form-input {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+@mixin form-input {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+@mixin mobile-button {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+@mixin mobile-page-heading {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: $primary-font-color;
+}
+
+// Breakpoints
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {     
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
