@@ -1,5 +1,6 @@
 @use "./variables" as *;
 
+
 //Mobile styles
 @mixin mobile-form-input {
     font-size: 13px;
@@ -17,6 +18,13 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
+}
+
+@mixin mobile-page-heading {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+    color: $primary-font-color;
 }
 
 // Breakpoints

@@ -3,20 +3,20 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 
 function Nav() {
     return (
-        <header class="nav">
+        <header className="nav">
             <a>
-                <img class="nav__logo" src={logo}></img>
+                <img className="nav__logo" src={logo}></img>
             </a>
-            <div class="nav__search">
-                <form class="nav__form">
+            <div className="nav__search">
+                <form className="nav__form">
                     <label>
-                        <input class="nav__input" placeholder="Search"></input>
+                        <input className="nav__input" placeholder="Search"></input>
                     </label>
                 </form>
-                <img src={require("../../assets/images/Mohan-muruge.jpg")} class="nav__avatar"></img>
+                <img src={require("../../assets/images/Mohan-muruge.jpg")} className="nav__avatar"></img>
             </div>
-            <button class="button nav__button">UPLOAD</button>
-            <img src={require("../../assets/images/Mohan-muruge.jpg")} class="nav__avatar nav__avatar--hidden"></img>
+            <button className="button nav__button">UPLOAD</button>
+            <img src={require("../../assets/images/Mohan-muruge.jpg")} className="nav__avatar nav__avatar--hidden"></img>
           </header>
     )
 }

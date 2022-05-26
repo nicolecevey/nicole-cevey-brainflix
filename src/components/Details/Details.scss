@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    &__title {
+        @include mobile-page-heading;
+    }
+}
