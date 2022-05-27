@@ -5,8 +5,9 @@ import Video from './components/Video/Video';
 import Videos from './data/videos.json';
 import videoDetails from './data/video-details.json';
 import Details from './components/Details/Details';
-import Comments from './components/Comments/Comments';
+import CommentsForm from './components/CommentsForm/CommentsForm';
 import Recommendations from './components/Recommendations/Recommendations';
+import Comments from './components/Comments/Comments';
 
 class App extends React.Component {
 	state = {
@@ -23,7 +24,8 @@ class App extends React.Component {
 					/>
 					<div className="container">
 						<Details selectedVideo={this.state.selectedVideo} />
-						<Comments />
+						<CommentsForm selectedVideo={this.state.selectedVideo}/>
+						<Comments selectedVideo={this.state.selectedVideo}/>
 						<Recommendations videos={Videos} />
 					</div>
 			  	</body>

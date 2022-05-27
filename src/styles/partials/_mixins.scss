@@ -53,3 +53,28 @@
         @content;
     }
 }
+
+@mixin button {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: $CTA-font-color;
+    width: 100%;
+    padding: 1rem 32px 1rem 32px;
+    border-radius: 4px;
+    border: none;
+    @include mobile-button;
+    background-color: $CTA-color;
+}
+
+@mixin input {
+    border-radius: 4px;
+    border: 2px solid $form-outline-color;
+    background-color: $form-background-color;
+}
+
+@mixin avatar {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: $avatar-color;
+}

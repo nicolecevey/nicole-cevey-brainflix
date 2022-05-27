@@ -1,0 +1,57 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments-form {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $divider-color;
+
+    &__add {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+
+    &__avatar {
+        @include avatar;
+        margin-right: 1rem;
+    }
+
+    &__number {
+        @include mobile-bold;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__button {
+        @include button;
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        @include mobile-heading;
+        font-weight: 700;
+    }
+
+    &__input {
+        margin-top: .5rem;
+        border-radius: 4px;
+        @include input;
+        padding: .5rem;
+        height: 5rem;
+
+        &::placeholder {
+            @include mobile-form-input;
+            color: $primary-font-color;
+            font-family: $font-stack;
+        }
+
+    }
+}

@@ -7,7 +7,7 @@ const Details = ({selectedVideo}) => {
             <h1 className="details__title">{selectedVideo.title}</h1>
             <div className="details__box">
                 <div className="details__info">
-                    <h2 className="details__name">{selectedVideo.channel}</h2>
+                    <h2 className="details__name">By {selectedVideo.channel}</h2>
                     <p className="details__date">{selectedVideo.timestamp}</p>
                 </div>
                 <div className="details__info">

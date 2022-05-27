@@ -1,23 +1,25 @@
 import "./Comments.scss";
 
-function Comments() {
-    
-    return (
-        <section className="comments">
-            <p className="comments__number">3 Comments</p>
-            <div>
-                <img className="comments__avatar"></img>
-                <form className="comments__form">
-                    <label className="comments__label">JOIN THE CONVERSATION
-                        <textarea className="comments__input" placeholder="Add a new comment"></textarea>
-                    </label>
-                    <button className="button comments__button">COMMENT</button>
-                </form>
-            </div>
-            <div className="comments__container">
+const Comments = ({selectedVideo}) => {
 
-            </div>
-		</section>
+
+    return (
+        <div className="comments">
+                {selectedVideo.comments.map((comment) => {
+                    return (
+                        <div className="comment">
+                            <span className="comment__avatar"></span>
+                            <div>
+                                <div className="comment__details">
+                                    <p className="comment__name">{comment.name}</p>
+                                    <p>{comment.timestamp}</p>
+                                </div>
+                                <p>{comment.comment}</p>
+                            </div>
+                        </div>
+                    )
+                })}
+        </div>
     )
 }
 
