@@ -1,4 +1,6 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 
 .details {
     display: flex;
@@ -7,5 +9,45 @@
 
     &__title {
         @include mobile-page-heading;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: 1px solid $divider-color;
+        border-bottom: 1px solid $divider-color;
+        margin: 1.5em 0 1.5rem 0;
+        padding: 1rem 0 1rem 0;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__name {
+        @include mobile-bold;
+    }
+
+    &__date {
+        @include mobile-heading;
+    }
+
+    &__views{
+        display: flex;
+        flex-direction: row;
+        @include mobile-heading;
+    }
+
+    &__likes {
+        display: flex;
+        flex-direction: row;
+        @include mobile-heading;
+    }
+
+    &__icon-eye {
+        margin-bottom: 1rem;
     }
 }

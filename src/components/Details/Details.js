@@ -1,26 +1,27 @@
 import "./Details.scss";
 
-function Details() {
+const Details = ({selectedVideo}) => {
 
     return (
         <section className="details">
-            <h1 className="details__title">BMX Rampage: 2021 Highlights</h1>
-            <div className="details">
+            <h1 className="details__title">{selectedVideo.title}</h1>
+            <div className="details__box">
                 <div className="details__info">
-                    <h2 className="details__name">By Red Crow</h2>
-                    <p className="details__date">07/11/2021</p>
+                    <h2 className="details__name">{selectedVideo.channel}</h2>
+                    <p className="details__date">{selectedVideo.timestamp}</p>
                 </div>
-                    <div>
-                        <img className="details__icon"></img>
-                        <p className="details__views">1,001,023</p>
+                <div className="details__info">
+                    <div className="details__views">
+                        <img src={require("../../assets/icons/views.svg")} className="details__icon-eye" alt="heart icon"/>
+                        <p>{selectedVideo.views}</p>
                     </div>
-                    <div>
-                        <img className="details__icon"></img>
-                        <p className="details__likes">110,985</p>
+                    <div className="details__likes">
+                        <img src={require("../../assets/icons/likes.svg")} className="details__icon-heart"></img>
+                        <p>{selectedVideo.likes}</p>
                     </div>
-                <div className="details__description">
                 </div>
             </div>
+            <p>{selectedVideo.description}</p>
         </section>
     )
 }
