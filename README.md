@@ -18,3 +18,4 @@ Recommendations
     --props: image, title, name (from videos.JSON)
     --event: onclick on video image
     --state: pass onclick event as prop for onclick event
+    --when click on video.json it should go to video-details 

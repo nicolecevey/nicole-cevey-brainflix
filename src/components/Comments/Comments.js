@@ -5,9 +5,9 @@ const Comments = ({selectedVideo}) => {
 
     return (
         <div className="comments">
-                {selectedVideo.comments.map((comment) => {
+                {selectedVideo.comments.map((comment, index) => {
                     return (
-                        <div className="comment">
+                        <div className="comment" key={index}>
                             <span className="comment__avatar"></span>
                             <div>
                                 <div className="comment__details">

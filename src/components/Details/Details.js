@@ -1,4 +1,6 @@
 import "./Details.scss";
+import likeIcon from "../../assets/icons/likes.svg";
+import viewsIcon from "../../assets/icons/views.svg"
 
 const Details = ({selectedVideo}) => {
 
@@ -12,11 +14,11 @@ const Details = ({selectedVideo}) => {
                 </div>
                 <div className="details__info">
                     <div className="details__views">
-                        <img src={require("../../assets/icons/views.svg")} className="details__icon-eye" alt="heart icon"/>
+                        <img src={likeIcon} className="details__icon-eye" alt="heart icon"/>
                         <p>{selectedVideo.views}</p>
                     </div>
                     <div className="details__likes">
-                        <img src={require("../../assets/icons/likes.svg")} className="details__icon-heart"></img>
+                        <img src={viewsIcon} className="details__icon-heart"></img>
                         <p>{selectedVideo.likes}</p>
                     </div>
                 </div>
