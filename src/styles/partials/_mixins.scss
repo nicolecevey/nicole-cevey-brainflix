@@ -23,23 +23,28 @@
 @mixin mobile-page-heading {
     font-size: 32px;
     line-height: 40px;
-    font-weight: 700;
+    font-weight: 500;
     color: $primary-font-color;
 }
 
 @mixin mobile-bold {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 700;
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: 500;
 }
 
 @mixin mobile-heading {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 20px;
-    font-weight: 400;
+    font-weight: 500;
     color: $secondary-font-color;
 }
 
+@mixin primary-font {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 400;
+}
 
 // Breakpoints
 @mixin tablet {

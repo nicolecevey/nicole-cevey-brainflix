@@ -18,3 +18,12 @@
     font-weight: 700;
     font-style: normal;
 }
+
+//Demi
+@font-face {
+    font-family: $font-stack;
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"),
+         url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}

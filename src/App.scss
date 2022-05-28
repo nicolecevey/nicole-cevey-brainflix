@@ -1,5 +1,7 @@
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
 
 * {
     margin: 0;
@@ -12,6 +14,8 @@ html {
 
 body {
     font-family: $font-stack, sans-serif;
+    color: $primary-font-color;
+    @include primary-font;
 }
 
 a {
