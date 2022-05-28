@@ -20,7 +20,7 @@ const Recommendations = ({videos, handleVideoChange}) => {
                             alt={`Video of ${video.title}`}
                             >
                             </img>
-                            <div className="video__description">
+                            <div className="video__details">
                                 <h3 className="video__title">{video.title}</h3>
                                 <p className="video__channel">{video.channel}</p>
                             </div>

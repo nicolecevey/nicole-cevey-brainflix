@@ -7,9 +7,17 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        margin: 1.5rem 2rem 0 2rem;
+    }
+
     &__title {
         @include mobile-heading;
         margin-bottom: .5rem;
+
+        @include tablet {
+            margin-bottom: 1rem;
+        }
     }
 
     &__videos {
@@ -24,6 +32,10 @@
     flex-direction: row;
     margin-bottom: 1rem;
 
+    @include tablet{
+        margin-bottom: 2rem;
+    }
+
     &__image {
         height: 5rem;
         min-width: 8rem;
@@ -33,6 +45,10 @@
         background-color: $avatar-color;
         object-fit: cover;
         object-position: center;
+    }
+
+    &__details {
+        max-width: 13.5rem;
     }
 
     &__title {
