@@ -2,6 +2,27 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.video {
-    width: 100%;
+.video-player {
+    background-color: $video-player-color;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        padding: 0 2rem 0 2rem;
+        background-color: $video-player-color;
+    }
+
+    @include desktop {
+        padding: 0 12rem 0 12rem;
+    }
+
+    &__video {
+        aspect-ratio: 16 / 9;
+        min-width: 26.5rem;
+        min-height: 15rem;
+        object-fit: cover;
+        object-position: center;
+    }
 }
+
+
