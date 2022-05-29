@@ -41,17 +41,19 @@ class App extends React.Component {
 			<>
 				<Nav/>
 				<Video
-					selectedVideo={this.state.selectedVideo}
-				/>
-				<div className="container"/>
-					<Details 
-						selectedVideo={this.state.selectedVideo} 
-						date={this.millisecondsToDate}/>
-					<CommentsForm selectedVideo={this.state.selectedVideo}/>
-					<Comments selectedVideo={this.state.selectedVideo}/>
+					selectedVideo={this.state.selectedVideo}/>
+				<main className="main">
+					<div>
+						<Details 
+							selectedVideo={this.state.selectedVideo} 
+							date={this.millisecondsToDate}/>
+						<CommentsForm selectedVideo={this.state.selectedVideo}/>
+						<Comments selectedVideo={this.state.selectedVideo}/>
+					</div>
 					<Recommendations 
 						videos={nonSelectedVideos} 
 						handleVideoChange={this.handleVideoChange}/>
+				</main>
 			</>
 		);
 	}
