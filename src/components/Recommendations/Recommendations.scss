@@ -3,26 +3,28 @@
 @use "../../styles/partials/mixins" as *;
 
 .recommendations {
-    margin-top: 1rem ;
+    border-top: 1px solid $divider-color;
     display: flex;
     flex-direction: column;
 
     @include tablet {
-        margin: 1.5rem 2rem 0 0;
+        margin-bottom: 2rem;
     }
 
     @include desktop {
         border-left: 1px solid $divider-color;
-        padding: 3rem 0 0 2rem;
+        padding: 1rem 0 2rem 2rem;
         margin: 0;
+        border-top: none;
+        min-width: 22rem;
     }
 
     &__title {
         @include section-heading;
-        margin-bottom: .5rem;
+        margin-top: 1rem;
 
         @include tablet {
-            margin-bottom: 1rem;
+            margin: 1.5rem 0 .5rem 0;
         }
     }
 
