@@ -13,6 +13,10 @@
 
     &__title {
         @include mobile-page-heading;
+
+        @include desktop {
+            padding-top: 2rem;
+        }
     }
 
     &__box {
@@ -27,6 +31,10 @@
         @include tablet {
             border-top: none;
             padding: 0 0 1rem 0;
+        }
+
+        @include desktop {
+            padding-right: 1rem;
         }
     }
 
@@ -73,5 +81,9 @@
         @include tablet{
             margin-left: 1rem;
         }
+    }
+
+    &__description {
+        padding-right: 1rem;
     }
 }

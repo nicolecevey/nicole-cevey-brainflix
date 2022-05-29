@@ -3,12 +3,18 @@
 @use "../../styles/partials/mixins" as *;
 
 .recommendations {
-    margin: 1rem;
+    margin-top: 1rem ;
     display: flex;
     flex-direction: column;
 
     @include tablet {
-        margin: 1.5rem 2rem 0 2rem;
+        margin: 1.5rem 2rem 0 0;
+    }
+
+    @include desktop {
+        border-left: 1px solid $divider-color;
+        padding: 3rem 0 0 2rem;
+        margin: 0;
     }
 
     &__title {
@@ -23,7 +29,7 @@
     &__videos {
         display: flex;
         flex-direction: column;
-        margin: 1rem 0 1rem 0;
+        margin-top: 1rem;
     }
 }
 
