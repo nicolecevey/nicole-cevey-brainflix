@@ -48,7 +48,9 @@ class App extends React.Component {
 							selectedVideo={this.state.selectedVideo} 
 							date={this.millisecondsToDate}/>
 						<CommentsForm selectedVideo={this.state.selectedVideo}/>
-						<Comments selectedVideo={this.state.selectedVideo}/>
+						<Comments 
+							selectedVideo={this.state.selectedVideo}
+							date={this.millisecondsToDate}/>
 					</div>
 					<Recommendations 
 						videos={nonSelectedVideos} 

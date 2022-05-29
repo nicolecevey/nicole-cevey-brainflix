@@ -44,22 +44,22 @@
             background-size: 1.5rem;
             background-position: 1rem;
         }
+
+        &::placeholder {
+            padding-left: 1.5rem;
+            color: $primary-font-color;
+            @include mobile-form-input;
     
-    }
-
-    &__input::placeholder {
-        padding-left: 1.5rem;
-        color: $primary-font-color;
-        @include mobile-form-input;
-
-        @include tablet {
-            padding-left: 2.5rem;
-            @include form-input;
+            @include tablet {
+                padding-left: 2.5rem;
+                @include form-input;
+            }
         }
-    }
 
-    &__input:focus{
-        outline-color: $active-form-color;
+        &:focus{
+            outline-color: $active-form-color;
+        }
+    
     }
 
     &__form {
@@ -85,6 +85,7 @@
     &__button {
         background: url(../../assets/icons/upload.svg) .5rem no-repeat;
         @include button;
+        margin-top: 1rem;
 
 
         @include tablet {
@@ -95,13 +96,9 @@
 
     &__avatar {
         @include avatar;
-        object-fit: cover;
-        object-position: left;
 
         @include tablet {
             display: none;
-            height: 3rem;
-            width: 3rem;
         }
 
         &--hidden {

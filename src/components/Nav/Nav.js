@@ -10,13 +10,22 @@ function Nav() {
             <div className="nav__search">
                 <form className="nav__form">
                     <label>
-                        <input className="nav__input" placeholder="Search"></input>
+                        <input 
+                            className="nav__input" 
+                            placeholder="Search">
+                        </input>
                     </label>
                 </form>
-                <img src={require("../../assets/images/Mohan-muruge.jpg")} className="nav__avatar"></img>
+                <img 
+                    src={require("../../assets/images/Mohan-muruge.jpg")} 
+                    className="nav__avatar">    
+                </img>
             </div>
             <button className="button nav__button">UPLOAD</button>
-            <img src={require("../../assets/images/Mohan-muruge.jpg")} className="nav__avatar nav__avatar--hidden"></img>
+            <img 
+                src={require("../../assets/images/Mohan-muruge.jpg")} 
+                className="nav__avatar nav__avatar--hidden">
+            </img>
           </header>
     )
 }

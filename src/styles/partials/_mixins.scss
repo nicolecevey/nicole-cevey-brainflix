@@ -67,15 +67,19 @@
 }
 
 @mixin button {
-    margin-top: 1rem;
     font-weight: 700;
     color: $CTA-font-color;
     width: 100%;
-    padding: 1rem 32px 1rem 32px;
+    height: 3rem;
+    padding: .5rem 2rem .5rem 2rem;
     border-radius: 4px;
     border: none;
     @include mobile-button;
     background-color: $CTA-color;
+
+    @include tablet {
+        width: 12rem;
+    }
 }
 
 @mixin input {
@@ -85,10 +89,12 @@
 }
 
 @mixin avatar {
-    height: 36px;
-    width: 36px;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     background-color: $avatar-color;
+    object-fit: cover;
+    object-position: left;
 }
 
 @mixin icon {

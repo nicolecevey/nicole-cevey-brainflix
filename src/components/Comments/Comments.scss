@@ -4,7 +4,6 @@
 .comments {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
 }
 
 .comment {
@@ -13,17 +12,23 @@
     padding-bottom: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: 100%;
+
+    &__container {
+        width: 100%;
+        margin-left: 1rem;
+    }
 
     &__avatar {
         @include avatar;
-        width: 9rem;
-        height: 3rem;
-        margin-right: 1rem;
     }
 
-    &__name{
+    &__name {
         @include mobile-bold;
+    }
+
+    &__date {
+        @include heading;
     }
 
     &__details {

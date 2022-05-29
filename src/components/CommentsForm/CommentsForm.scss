@@ -7,7 +7,11 @@
     flex-direction: column;
     border-bottom: 1px solid $divider-color;
 
-    &__add {
+    @include tablet {
+        padding-bottom: 1rem;
+    }
+
+    &__container {
         display: flex;
         flex-direction: row;
         margin-top: 2rem;
@@ -15,7 +19,7 @@
 
     &__avatar {
         @include avatar;
-        margin-right: 1rem;
+        margin: 2rem 1rem 0 0;
     }
 
     &__number {
@@ -26,17 +30,33 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
     }
 
     &__button {
         @include button;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
+        background-image: url(../../assets/icons/add_comment.svg);
+        background-position: 1rem;
+        background-repeat: no-repeat;
+        padding: 0 1rem 0 3rem;
+
+        @include tablet {
+            margin: 1.5rem 0 0 0;
+        }
     }
 
     &__label {
         display: flex;
         flex-direction: column;
         @include section-heading;
+        width: 100%;
+
     }
 
     &__input {
@@ -52,5 +72,9 @@
             font-family: $font-stack;
         }
 
+        @include tablet {
+            height: 2rem;
+            margin-right: 2rem;
+        }
     }
 }
