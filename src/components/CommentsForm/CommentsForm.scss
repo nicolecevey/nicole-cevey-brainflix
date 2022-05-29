@@ -36,8 +36,7 @@
     &__label {
         display: flex;
         flex-direction: column;
-        @include mobile-heading;
-        font-weight: 700;
+        @include section-heading;
     }
 
     &__input {

@@ -12,7 +12,7 @@
     }
 
     &__title {
-        @include mobile-heading;
+        @include section-heading;
         margin-bottom: .5rem;
 
         @include tablet {

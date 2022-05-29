@@ -33,7 +33,14 @@
     font-weight: 500;
 }
 
-@mixin mobile-heading {
+@mixin heading {
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $secondary-font-color;
+}
+
+@mixin section-heading {
     font-size: 17px;
     line-height: 20px;
     font-weight: 500;
@@ -82,4 +89,9 @@
     width: 36px;
     border-radius: 50%;
     background-color: $avatar-color;
+}
+
+@mixin icon {
+    height: 1.25rem;
+    margin-right: .5rem;
 }

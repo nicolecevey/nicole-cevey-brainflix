@@ -7,6 +7,14 @@
     flex-direction: column;
     margin: 1rem;
 
+    @include tablet {
+        margin: 2rem;
+    }
+
+    @include tablet {
+        margin: 2rem 5rem;
+    }
+
     &__title {
         @include mobile-page-heading;
     }
@@ -17,14 +25,26 @@
         justify-content: space-between;
         border-top: 1px solid $divider-color;
         border-bottom: 1px solid $divider-color;
-        margin: 1.5em 0 1.5rem 0;
-        padding: 1rem 0 1rem 0;
+        margin: 1.5em 0;
+        padding: 1.5rem 0;
+
+        @include tablet {
+            border-top: none;
+            padding: 0 0 1rem 0;
+        }
     }
 
     &__info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 1rem;
+        margin-right: 4rem;
+
+        @include tablet {
+            flex-direction: row;
+            margin-right: 0;
+        }
     }
 
     &__name {
@@ -32,22 +52,27 @@
     }
 
     &__date {
-        @include mobile-heading;
+        @include heading;
+        margin-left: 1rem;
     }
 
     &__views{
         display: flex;
         flex-direction: row;
-        @include mobile-heading;
+        @include heading;
     }
 
     &__likes {
         display: flex;
         flex-direction: row;
-        @include mobile-heading;
+        @include heading;
     }
 
-    &__icon-eye {
-        margin-bottom: 1rem;
+    &__icon {
+        @include icon;
+
+        @include tablet{
+            margin-left: 1rem;
+        }
     }
 }

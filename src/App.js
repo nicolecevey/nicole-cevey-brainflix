@@ -21,6 +21,16 @@ class App extends React.Component {
 			selectedVideo: newSelectedVideo
 		});		
 	}
+
+	millisecondsToDate = (milliseconds) => {
+		let date = new Date(milliseconds);
+		return date.toLocaleDateString("en-US", {
+			month: "2-digit", 
+			day: "2-digit", 
+			year: "numeric"  
+		})
+	}
+
 	render() {
 		
 		const nonSelectedVideos = videos.filter((video) => {
@@ -34,7 +44,9 @@ class App extends React.Component {
 					selectedVideo={this.state.selectedVideo}
 				/>
 				<div className="container"/>
-					<Details selectedVideo={this.state.selectedVideo} />
+					<Details 
+						selectedVideo={this.state.selectedVideo} 
+						date={this.millisecondsToDate}/>
 					<CommentsForm selectedVideo={this.state.selectedVideo}/>
 					<Comments selectedVideo={this.state.selectedVideo}/>
 					<Recommendations 
