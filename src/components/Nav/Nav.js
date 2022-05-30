@@ -4,15 +4,19 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 function Nav() {
     return (
         <header className="nav">
-            <a>
-                <img className="nav__logo" src={logo}></img>
+            <a href="/">
+                <img 
+                    className="nav__logo" 
+                    src={logo}>
+                </img>
             </a>
             <div className="nav__search">
                 <form className="nav__form">
                     <label>
                         <input 
                             className="nav__input" 
-                            placeholder="Search">
+                            placeholder="Search"
+                            required>
                         </input>
                     </label>
                 </form>

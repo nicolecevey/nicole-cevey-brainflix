@@ -7,59 +7,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin: .5rem 1rem 1rem 1rem;
     
     @include tablet {
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        margin: 1rem;
+        justify-content: flex-end;
+        margin: 1rem 2rem;
     }
 
     @include desktop {
-        margin: 1rem 5rem 1rem 5rem;
+        margin: 1rem 6rem;
     }
 
     &__logo {
-        margin-bottom: 1rem;
-        height: 25px;
-        width: 120px;
+        margin-bottom: .5rem;
+        height: 3rem;
+        width: 9rem;
 
         @include tablet {
-            margin: 0 5rem 0 0;
+            margin: 0;
         }
     }
 
     &__input {
         width: 100%;
-        height: 36px;
-        padding: 0 12px 0 12px;
-        margin-right: 1rem;
+        height: 3rem;
+        padding-left: 2.5rem;
         background: url(../../assets/icons/search.svg) .5rem no-repeat;
         @include input;
 
     
         @include tablet {
-            height: 3rem;
             background-size: 1.5rem;
             background-position: 1rem;
+            margin-left: 1rem;
+            width: 15rem;
+            height: 2.5rem;
+            padding-left: 3rem;
         }
 
         &::placeholder {
-            padding-left: 1.5rem;
             color: $primary-font-color;
-            @include mobile-form-input;
-    
-            @include tablet {
-                padding-left: 2.5rem;
-                @include form-input;
-            }
         }
 
         &:focus{
             outline-color: $active-form-color;
         }
-    
     }
 
     &__form {
@@ -87,15 +81,14 @@
         @include button;
         margin-top: 1rem;
 
-
         @include tablet {
-            margin: 0;
-            width: 16rem;
+            margin: 0 0 0 1rem;
         }
     }
 
     &__avatar {
         @include avatar;
+        margin-left: 1rem;
 
         @include tablet {
             display: none;

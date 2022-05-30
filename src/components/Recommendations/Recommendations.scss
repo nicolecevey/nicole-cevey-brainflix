@@ -20,12 +20,8 @@
     }
 
     &__title {
-        @include section-heading;
-        margin-top: 1rem;
-
-        @include tablet {
-            margin: 1.5rem 0 .5rem 0;
-        }
+        margin: 1.5rem 0 .5rem 0;
+        font-weight: 500;
     }
 
     &__videos {
@@ -39,6 +35,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
+    cursor: pointer;
 
     @include tablet{
         margin-bottom: 2rem;
@@ -55,18 +52,12 @@
         object-position: center;
     }
 
-    &__details {
-        max-width: 13.5rem;
-    }
-
     &__title {
-        @include mobile-bold;
         margin-bottom: .5rem;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-
     }
 }

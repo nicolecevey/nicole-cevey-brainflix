@@ -8,12 +8,10 @@
     margin-bottom: 1.5rem;
 
     @include desktop {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     &__title {
-        @include mobile-page-heading;
-
         @include desktop {
             padding-top: 2rem;
         }
@@ -31,6 +29,7 @@
         @include tablet {
             border-top: none;
             padding: 0 0 1rem 0;
+            margin-top: 1rem;
         }
 
         @include desktop {
@@ -47,32 +46,31 @@
 
         @include tablet {
             flex-direction: row;
+            align-items: center;
             margin-right: 0;
         }
     }
 
-    &__name {
-        @include mobile-bold;
+    &__channel {
+        @include tablet {
+            margin-right: 1rem;
+        }
     }
 
     &__date {
-        @include heading;
-
         @include tablet {
             margin-left: 1rem;
         }
     }
 
-    &__views{
+    &__views {
         display: flex;
         flex-direction: row;
-        @include heading;
     }
 
     &__likes {
         display: flex;
         flex-direction: row;
-        @include heading;
     }
 
     &__icon {
@@ -84,6 +82,9 @@
     }
 
     &__description {
-        padding-right: 2rem;
+        @include tablet {
+            padding-right: 2rem;
+            margin-bottom: 1rem;
+        }
     }
 }

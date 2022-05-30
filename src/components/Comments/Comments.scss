@@ -34,14 +34,10 @@
     &__avatar {
         @include avatar;
         min-width: 3rem;
-    }
 
-    &__name {
-        @include mobile-bold;
-    }
-
-    &__date {
-        @include heading;
+        @include tablet {
+            min-width: 2.5rem;
+        }
     }
 
     &__details {

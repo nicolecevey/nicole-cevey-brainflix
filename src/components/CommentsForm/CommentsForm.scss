@@ -21,6 +21,7 @@
 
         @include desktop {
             padding-left: 1rem;
+            margin-top: 1rem;
         }
     }
 
@@ -31,10 +32,6 @@
         @include desktop {
             margin-right: 2rem;
         }
-    }
-
-    &__number {
-        @include mobile-bold;
     }
 
     &__form {
@@ -55,36 +52,38 @@
         background-image: url(../../assets/icons/add_comment.svg);
         background-position: 1rem;
         background-repeat: no-repeat;
-        padding: 0 1rem 0 3rem;
+        padding: 0 3rem;
 
         @include tablet {
-            margin: 1.5rem 0 0 0;
+            margin: 1.75rem 0 0 0;
         }
     }
 
     &__label {
         display: flex;
         flex-direction: column;
-        @include section-heading;
         width: 100%;
-
+        border: none;
+        font-weight: 500;
     }
 
     &__input {
         margin-top: .5rem;
-        border-radius: 4px;
         @include input;
-        padding: .5rem;
-        height: 5rem;
+        padding: 1rem;
+        height: 7rem;
+        font-family: $font-stack;
 
         &::placeholder {
-            @include mobile-form-input;
             color: $primary-font-color;
-            font-family: $font-stack;
+        }
+
+        &:focus {
+            outline: 2px solid $active-form-color;
         }
 
         @include tablet {
-            height: 2rem;
+            height: 1rem;
             margin-right: 2rem;
         }
     }

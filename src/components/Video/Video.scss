@@ -6,6 +6,7 @@
     background-color: $video-player-color;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 
     @include tablet {
         padding: 0 2rem 0 2rem;

@@ -9,8 +9,8 @@ const Details = ({selectedVideo, date}) => {
             <h1 className="details__title">{selectedVideo.title}</h1>
             <div className="details__box">
                 <div className="details__info">
-                    <h2 className="details__name">By {selectedVideo.channel}</h2>
-                    <p className="details__date">{date(selectedVideo.timestamp)}</p>
+                    <h2 className="details__channel">By {selectedVideo.channel}</h2>
+                    <h3>{date(selectedVideo.timestamp)}</h3>
                 </div>
                 <div className="details__info">
                     <div className="details__views">
@@ -18,14 +18,14 @@ const Details = ({selectedVideo, date}) => {
                             className="details__icon" 
                             alt="heart icon">
                         </img>
-                        <p>{selectedVideo.views}</p>
+                        <h3>{selectedVideo.views}</h3>
                     </div>
                     <div className="details__likes">
                         <img 
                             src={likeIcon} 
                             className="details__icon">
                         </img>
-                        <p>{selectedVideo.likes}</p>
+                        <h3>{selectedVideo.likes}</h3>
                     </div>
                 </div>
             </div>

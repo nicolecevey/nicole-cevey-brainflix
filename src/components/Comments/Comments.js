@@ -11,8 +11,8 @@ const Comments = ({selectedVideo, date}) => {
                             <span className="comment__avatar"></span>
                             <div className="comment__container">
                                 <div className="comment__details">
-                                    <p className="comment__name">{comment.name}</p>
-                                    <p className="comment__date">{date(comment.timestamp)}</p>
+                                    <h2 className="comment__name">{comment.name}</h2>
+                                    <h3 className="comment__date">{date(comment.timestamp)}</h3>
                                 </div>
                                 <p>{comment.comment}</p>
                             </div>
