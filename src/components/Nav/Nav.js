@@ -1,5 +1,6 @@
 import "./Nav.scss"
 import logo from "../../assets/logo/BrainFlix-logo.svg";
+import { Link } from "react-router-dom";
 
 function Nav() {
     return (
@@ -25,7 +26,9 @@ function Nav() {
                     className="nav__avatar">    
                 </img>
             </div>
-            <button className="button nav__button">UPLOAD</button>
+            <button className="button nav__button">
+                <Link to="/upload">UPLOAD</Link>
+                </button>
             <img 
                 src={require("../../assets/images/Mohan-muruge.jpg")} 
                 className="nav__avatar nav__avatar--hidden">
