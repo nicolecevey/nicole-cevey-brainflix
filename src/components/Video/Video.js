@@ -6,7 +6,7 @@ import "./Video.scss"
             <video 
                 controls 
                 className="video-player__video"
-                src={selectedVideo}
+                poster={selectedVideo}
             >
             </video>
         </div>
