@@ -1,0 +1,9 @@
+.upload-form {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+    }
+}

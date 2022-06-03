@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 function Nav() {
     return (
         <header className="nav">
-            <a href="/">
+            <Link to="/">
                 <img 
                     className="nav__logo" 
                     src={logo}>
                 </img>
-            </a>
+            </Link>
             <div className="nav__search">
                 <form className="nav__form">
                     <label>

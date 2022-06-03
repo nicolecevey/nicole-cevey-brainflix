@@ -22,39 +22,73 @@ class Home extends React.Component {
       const activeVideoId = this.props.match.params.id || response.data[0].id;
       this.fetchActiveVideo(activeVideoId).then((activeVideoResponse) => {
         this.setState({
-		      videoList: response.data,
+          videoList: response.data,
           selectedVideo: activeVideoResponse.data,
         });
       });
     });
   }
 
-  fetchActiveVideo = (videoId) => {
-    return axios.get(`${BASE_URL}/videos/${videoId}${apiKeyString}`);
-  };
-
   componentDidUpdate(previousProps) {
     const previousId = previousProps.match.params.id;
     const currentId = this.props.match.params.id;
+
     // Only update the active video if we are on a new url!
-    if (previousId !== currentId) {
-      this.fetchActiveVideo(currentId)
-    }
+	if (previousId !== currentId) {
+		if (typeof currentId === "undefined") {
+			const defaultVideoId = this.state.videoList[0].id;
+			return this.fetchActiveVideo(defaultVideoId)
+				.then((response) => {
+					this.setState({
+						selectedVideo: response.data
+					});
+				})
+		}
+		this.fetchActiveVideo(currentId)
+			.then((response) => {
+				this.setState({
+					selectedVideo: response.data
+				});
+				console.log(currentId)
+			})
+	}
+    // if (!currentId) {
+    //   const defaultVideoId = this.state.videoList[0].id;
+    //    this.fetchActiveVideo(defaultVideoId).then((response) => {
+    //     this.setState({
+    //       selectedVideo: response.data,
+    //     });
+    //   });
+    // } else{
+	// 	return this.fetchActiveVideo(currentId).then((response) => {
+	// 		return this.setState({
+	// 		  selectedVideo: response.data,
+	// 		});
+	// 	});
+	// }
+
+    // if (!currentId){
+    //   const defaultVideoId = this.state.videoList[0].id;
+
+    //   this.fetchActiveVideo(defaultVideoId)
+    //     .then(response => {
+    //       this.setState({
+    //         selectedVideo: response.data
+    //       })
+    //     });
+    // } else if (previousId !== currentId) {
+    //   this.fetchActiveVideo(currentId)
+    //     .then(response => {
+    //       this.setState({
+    //         selectedVideo: response.data
+    //       })
+    //     })
+    // }
   }
 
-  handleVideoChange = (videoId) => {
-		// const newSelectedVideo = this.state.videoList.find((video) => videoId === video.id)
-    axios.get(getVideoEndpoint).then((response) => {
-      this.fetchActiveVideo(videoId).then((response) =>
-        this.setState({
-          selectedVideo: response.data
-        }))
-        // if (this.state.videoList.includes(videoId)) {
-        //   this.state.videoList.pop(videoId)
-        // }
-      })
-    }
-	
+  fetchActiveVideo = (videoId) => {
+    return axios.get(`${BASE_URL}/videos/${videoId}${apiKeyString}`);
+  };
 
   millisecondsToDate = (milliseconds) => {
     let date = new Date(milliseconds);
@@ -67,6 +101,9 @@ class Home extends React.Component {
 
   render() {
     const { selectedVideo, videoList } = this.state;
+    const filteredVideos = this.state.videoList.filter((video) => {
+      return video.id !== this.state.selectedVideo.id;
+    });
     return videoList && selectedVideo ? (
       <>
         <Video selectedVideo={selectedVideo.image} />
@@ -82,16 +119,12 @@ class Home extends React.Component {
               date={this.millisecondsToDate}
             />
           </div>
-          <Recommendations 
-            videos={videoList}
-            handleVideoChange={this.handleVideoChange} 
-            />
-        </main>{" "}
+          <Recommendations videos={filteredVideos} />
+        </main>
       </>
     ) : (
       <h1>Loading...</h1>
     );
-
   }
 }
 

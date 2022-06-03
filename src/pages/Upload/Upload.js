@@ -1,12 +1,29 @@
-// import UploadForm from "../../components/UploadForm/UploadForm";
-// import Video from "../../components/Video/Video";
+import thumbnail from "../../assets/images/Upload-video-preview.jpg";
+import "./Upload.scss"
 
-function Upload() {
+function Upload(props) {
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        alert("Publish")
+        props.history.push("/")
+    }
+
     return(
         <>
-            <h1>Hello</h1>
-            {/* <Video/> */}
-            {/* <UploadForm/> */}
+            <img src={thumbnail}></img>
+            <form 
+                onSubmit={submitHandler} 
+                className="upload-form">
+                <label className="upload-form__label"> TITLE YOUR VIDEO
+                    <input placeholder="Add a title to your video"></input>
+                </label>
+                <label className="upload-form__label"> ADD A VIDEO DESCRIPTION
+                    <textarea placeholder="Add a description to your video">
+                    </textarea>
+                </label>
+                <button>PUBLISH</button>
+            </form>
         </>
     )
 }
