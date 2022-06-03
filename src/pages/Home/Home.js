@@ -38,7 +38,7 @@ class Home extends React.Component {
     const currentId = this.props.match.params.id;
     // Only update the active video if we are on a new url!
     if (previousId !== currentId) {
-      this.fetchActiveVideo(currentId);
+      this.fetchActiveVideo(currentId)
     }
   }
 

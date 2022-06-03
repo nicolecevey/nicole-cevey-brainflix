@@ -1,3 +1,4 @@
+import reactRouterDom from "react-router-dom";
 import "./Recommendations.scss";
 
 const Recommendations = ({videos, handleVideoChange}) => {

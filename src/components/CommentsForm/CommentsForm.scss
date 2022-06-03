@@ -73,6 +73,7 @@
         padding: 1rem;
         height: 7rem;
         font-family: $font-stack;
+        resize: none;
 
         &::placeholder {
             color: $primary-font-color;
