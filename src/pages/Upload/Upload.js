@@ -24,12 +24,16 @@ function Upload(props) {
                     className="upload-form">
                     <label className="upload-form__label"> TITLE YOUR VIDEO
                         <input 
-                            placeholder="Add a title to your video">
+                            placeholder="Add a title to your video"
+                            className="upload-form__title-input"
+                            >
                         </input>
                     </label>
                     <label className="upload-form__label"> ADD A VIDEO DESCRIPTION
                         <textarea 
-                            placeholder="Add a description to your video">
+                            placeholder="Add a description to your video"
+                            className="upload-form__description-input"
+                            >
                         </textarea>
                     </label>
                     <button className="upload-form__button">PUBLISH</button>

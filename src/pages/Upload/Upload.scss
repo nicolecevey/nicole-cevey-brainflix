@@ -10,7 +10,7 @@
     }
 
     &__thumbnail-heading {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         font-weight: 500;
     }
 
@@ -30,10 +30,33 @@
 .upload-form {
     display: flex;
     flex-direction: column;
+    margin: 2rem 0;
 
     &__label {
         display: flex;
         flex-direction: column;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+
+    &__title-input, &__description-input {
+        margin-top: .5rem;
+        padding: 1rem;
+        @include input;
+        font-family: $font-stack;
+
+        &::placeholder {
+            color: $primary-font-color;
+        }
+
+        &:focus {
+            outline: 2px solid $active-form-color;
+        }
+    }
+
+    &__description-input {
+        height: 5rem;
+        resize: none;
     }
 
     &__button {
