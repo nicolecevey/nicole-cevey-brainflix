@@ -27,7 +27,7 @@ function Nav() {
                 </img>
             </div>
             <button className="button nav__button">
-                <Link to="/upload">UPLOAD</Link>
+                <Link to="/upload" className="button">UPLOAD</Link>
                 </button>
             <img 
                 src={require("../../assets/images/Mohan-muruge.jpg")} 

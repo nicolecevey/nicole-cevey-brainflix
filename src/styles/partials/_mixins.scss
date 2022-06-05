@@ -26,10 +26,30 @@
     border: none;
     background-color: $CTA-color;
     cursor: pointer;
+    text-decoration: none;
 
     @include tablet {
         max-width: 10rem;
         height: 2.5rem;
+    }
+}
+
+@mixin cancel-button {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $background-color;
+    color: $CTA-color;
+    width: 100%;
+    padding: .5rem 0;
+
+    @include tablet {
+        max-width: 10rem;
+        margin-right: 1rem;
+        height: 1.5rem;
     }
 }
 
