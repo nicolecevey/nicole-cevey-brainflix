@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.not-found {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        margin: 2rem; 
+    }
+
+    &__button {
+        @include button;
+        margin: 2rem;
+    }
+
+    &__link {
+        color: $CTA-font-color;
+    }
+}

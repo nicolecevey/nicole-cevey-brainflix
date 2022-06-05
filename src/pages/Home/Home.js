@@ -15,6 +15,7 @@ class Home extends React.Component {
   state = {
     selectedVideo: null,
     videoList: [],
+    hasFetchingError: false,
   };
 
   componentDidMount() {
@@ -26,6 +27,11 @@ class Home extends React.Component {
           videoList: response.data,
           selectedVideo: activeVideoResponse.data,
         });
+      });
+    })
+    .catch((error) => {
+      this.setState({
+        hasFetchingError: true,
       });
     });
   }
@@ -45,14 +51,23 @@ class Home extends React.Component {
               selectedVideo: response.data
             });
           })
+          .catch((error) => {
+            this.setState({
+              hasFetchingError: true,
+            });
+          });
       }
       this.fetchActiveVideo(currentId)
         .then((response) => {
           this.setState({
             selectedVideo: response.data
+          })
+          .catch((error) => {
+            this.setState({
+              hasFetchingError: true,
+            });
           });
-          console.log(currentId)
-        })
+        });
     }
   }
 
@@ -71,9 +86,15 @@ class Home extends React.Component {
 
   render() {
     const { selectedVideo, videoList } = this.state;
-    const filteredVideos = this.state.videoList.filter((video) => {
-      return video.id !== this.state.selectedVideo.id;
+
+    if (this.state.hasFetchingError) {
+      return <p>Error loading data from server</p>;
+    }
+
+    const filteredVideos = videoList.filter((video) => {
+      return video.id !== selectedVideo.id;
     });
+    
     return videoList && selectedVideo ? (
       <>
         <Video selectedVideo={selectedVideo.image} />
