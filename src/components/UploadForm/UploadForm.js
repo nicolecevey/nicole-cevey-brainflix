@@ -13,6 +13,7 @@ const UploadForm = ({submitHandler}) => {
                 <img 
                     src={thumbnail}
                     className="upload__thumbnail"
+                    alt="Close-up of handle-bars of bike in motion"
                 >
                 </img>
             </div>

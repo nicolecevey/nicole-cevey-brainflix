@@ -9,7 +9,9 @@ const CommentsForm = ({comments}) => {
             <div className="comments-form__container">
                 <img 
                     src={require("../../assets/images/Mohan-muruge.jpg")} 
-                    className="comments-form__avatar">
+                    className="comments-form__avatar"
+                    alt="Circular headshot of man"
+                    >
                 </img>
                 <form className="comments-form__form">
                     <label 

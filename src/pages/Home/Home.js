@@ -1,10 +1,10 @@
 import React from "react";
+import axios from "axios";
 import Video from "../../components/Video/Video";
 import Details from "../../components/Details/Details";
 import CommentsForm from "../../components/CommentsForm/CommentsForm";
 import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
-import axios from "axios";
 
 const BASE_URL = "https://project-2-api.herokuapp.com";
 const API_KEY = "891f1817-ac84-4209-a143-55ea13d0e233";
@@ -18,6 +18,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
+    document.title = "BrainFlix";
     axios.get(getVideoEndpoint).then((response) => {
       const activeVideoId = this.props.match.params.id || response.data[0].id;
       this.fetchActiveVideo(activeVideoId).then((activeVideoResponse) => {

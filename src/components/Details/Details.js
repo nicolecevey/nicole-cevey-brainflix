@@ -17,14 +17,16 @@ const Details = ({selectedVideo, date}) => {
                     <div className="details__views">
                         <img src={viewsIcon} 
                             className="details__icon" 
-                            alt="heart icon">
+                            alt="Heart icon">
                         </img>
                         <h3>{selectedVideo.views}</h3>
                     </div>
                     <div className="details__likes">
                         <img 
                             src={likeIcon} 
-                            className="details__icon">
+                            className="details__icon"
+                            alt="Like icon"
+                            >
                         </img>
                         <h3>{selectedVideo.likes}</h3>
                     </div>

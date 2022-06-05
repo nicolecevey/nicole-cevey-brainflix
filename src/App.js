@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
 import Home from './pages/Home/Home';
 import Nav from './components/Nav/Nav';
 import Upload from "./pages/Upload/Upload";
+import '../src/styles/global.scss';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 function App(){
