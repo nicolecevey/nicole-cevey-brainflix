@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./Recommendations.scss";
 
 const Recommendations = ({videos}) => {
+    // Renders recommended videos section
+
     return (
         <section className="recommendations">
             <h3 className="recommendations__title">NEXT VIDEOS</h3>

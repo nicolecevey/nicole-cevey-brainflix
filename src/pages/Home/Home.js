@@ -30,60 +30,29 @@ class Home extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
+    window.scrollTo(0, 0)
     const previousId = previousProps.match.params.id;
     const currentId = this.props.match.params.id;
 
-    // Only update the active video if we are on a new url!
-	if (previousId !== currentId) {
-		if (typeof currentId === "undefined") {
-			const defaultVideoId = this.state.videoList[0].id;
-			return this.fetchActiveVideo(defaultVideoId)
-				.then((response) => {
-					this.setState({
-						selectedVideo: response.data
-					});
-				})
-		}
-		this.fetchActiveVideo(currentId)
-			.then((response) => {
-				this.setState({
-					selectedVideo: response.data
-				});
-				console.log(currentId)
-			})
-	}
-    // if (!currentId) {
-    //   const defaultVideoId = this.state.videoList[0].id;
-    //    this.fetchActiveVideo(defaultVideoId).then((response) => {
-    //     this.setState({
-    //       selectedVideo: response.data,
-    //     });
-    //   });
-    // } else{
-	// 	return this.fetchActiveVideo(currentId).then((response) => {
-	// 		return this.setState({
-	// 		  selectedVideo: response.data,
-	// 		});
-	// 	});
-	// }
-
-    // if (!currentId){
-    //   const defaultVideoId = this.state.videoList[0].id;
-
-    //   this.fetchActiveVideo(defaultVideoId)
-    //     .then(response => {
-    //       this.setState({
-    //         selectedVideo: response.data
-    //       })
-    //     });
-    // } else if (previousId !== currentId) {
-    //   this.fetchActiveVideo(currentId)
-    //     .then(response => {
-    //       this.setState({
-    //         selectedVideo: response.data
-    //       })
-    //     })
-    // }
+      // Only update the active video if we are on a new url!
+    if (previousId !== currentId) {
+      if (typeof currentId === "undefined") {
+        const defaultVideoId = this.state.videoList[0].id;
+        return this.fetchActiveVideo(defaultVideoId)
+          .then((response) => {
+            this.setState({
+              selectedVideo: response.data
+            });
+          })
+      }
+      this.fetchActiveVideo(currentId)
+        .then((response) => {
+          this.setState({
+            selectedVideo: response.data
+          });
+          console.log(currentId)
+        })
+    }
   }
 
   fetchActiveVideo = (videoId) => {
@@ -113,7 +82,7 @@ class Home extends React.Component {
               selectedVideo={selectedVideo}
               date={this.millisecondsToDate}
             />
-            <CommentsForm />
+            <CommentsForm comments={selectedVideo.comments}/>
             <Comments
               comments={selectedVideo && selectedVideo.comments}
               date={this.millisecondsToDate}

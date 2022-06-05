@@ -3,6 +3,8 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 import { Link } from "react-router-dom";
 
 function Nav() {
+    // Navbar component
+
     return (
         <header className="nav">
             <Link to="/">

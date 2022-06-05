@@ -1,6 +1,9 @@
 import "./Comments.scss";
 
 const Comments = ({comments, date}) => {
+    // Individual comment component
+    // Renders each comment with corresponding name and date
+
     return (
         <div className="comments">
             {comments.map((comment, index) => {

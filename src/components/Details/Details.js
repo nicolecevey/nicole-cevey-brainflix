@@ -3,6 +3,7 @@ import likeIcon from "../../assets/icons/likes.svg";
 import viewsIcon from "../../assets/icons/views.svg"
 
 const Details = ({selectedVideo, date}) => {
+    // Renders details under each video, including title, channel name, date, likes and views
 
     return (
         <section className="details">

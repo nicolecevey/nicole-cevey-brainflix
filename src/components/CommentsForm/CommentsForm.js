@@ -1,10 +1,11 @@
 import "./CommentsForm.scss";
 
-const CommentsForm = () => {
-    
+const CommentsForm = ({comments}) => {
+    // Renders the comment form section to input a new comment
+
     return (
         <section className="comments-form">
-            <h2>3 Comments</h2>
+            <h2>{`${comments.length} Comments`}</h2>
             <div className="comments-form__container">
                 <img 
                     src={require("../../assets/images/Mohan-muruge.jpg")} 

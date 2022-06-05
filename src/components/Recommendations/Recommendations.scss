@@ -59,5 +59,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: $primary-font-color;
+    }
+
+    &__channel {
+        color: $primary-font-color;
     }
 }
