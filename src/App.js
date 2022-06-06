@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './pages/Home/Home';
-import Nav from './components/Nav/Nav';
+import Navigation from './components/Navigation/Navigation';
 import Upload from "./pages/Upload/Upload";
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import '../src/styles/global.scss';
@@ -11,7 +11,7 @@ function App(){
 	return (
 		<>
 		<BrowserRouter>
-			<Nav/>
+			<Navigation/>
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/videos/:id" component={Home} />

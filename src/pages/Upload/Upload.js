@@ -4,7 +4,7 @@ function Upload(props) {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        alert("Publish")
+        alert("Video has been successfully uploaded")
         props.history.push("/")
     }
 

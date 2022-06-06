@@ -1,4 +1,4 @@
-import "./Nav.scss"
+import "./Navigation.scss"
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import { Link } from "react-router-dom";
 

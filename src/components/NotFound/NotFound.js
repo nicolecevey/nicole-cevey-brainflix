@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./NotFound.scss";
 
 function NotFound() {
+    // Component for error handling page
+
     return(
         <section className="not-found">
             <h1 className="not-found__title">Oh no.. we can't find the page you're looking for.</h1>

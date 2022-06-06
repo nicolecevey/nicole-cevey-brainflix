@@ -3,6 +3,10 @@ import "./CommentsForm.scss";
 const CommentsForm = ({comments}) => {
     // Renders the comment form section to input a new comment
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <section className="comments-form">
             <h2>{`${comments.length} Comments`}</h2>
@@ -13,7 +17,10 @@ const CommentsForm = ({comments}) => {
                     alt="Circular headshot of man"
                     >
                 </img>
-                <form className="comments-form__form">
+                <form 
+                    className="comments-form__form"
+                    onSubmit={handleSubmit}
+                    >
                     <label 
                         className="comments-form__label"
                         id="input"

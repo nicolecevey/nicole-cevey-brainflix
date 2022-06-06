@@ -94,7 +94,7 @@ class Home extends React.Component {
     const filteredVideos = videoList.filter((video) => {
       return video.id !== selectedVideo.id;
     });
-    
+
     return videoList && selectedVideo ? (
       <>
         <Video selectedVideo={selectedVideo.image} />

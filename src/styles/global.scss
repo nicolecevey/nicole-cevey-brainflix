@@ -2,7 +2,6 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-
 * {
     margin: 0;
     padding: 0;
@@ -22,34 +21,50 @@ a {
 }
 
 h1 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 1.875rem;
+    line-height: 2.5rem;
     font-weight: 500;
     color: $primary-font-color;
+
+    @include tablet {
+        font-size: 2rem;
+    }
 }
 
 h2 {
-    font-size: 17px;
-    line-height: 23px;
+    font-size: 1.063rem;
+    line-height: 1.438rem;
     font-weight: 500;
+
+    @include tablet {
+        font-size: 1rem;
+    }
 }
 
 h3, label {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.063rem;
+    line-height: 1.25rem;
     font-weight: 400;
     color: $secondary-font-color;
+
+    @include tablet {
+        font-size: 1rem;
+    }
 }
 
 p {
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 1.063rem;
+    line-height: 1.375rem;
     font-weight: 400;
+
+    @include tablet {
+        font-size: 1rem;
+    }
 }
 
 ::placeholder {
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 0.938rem;
+    line-height: 1.25rem;
     font-weight: 400;
 }
 
