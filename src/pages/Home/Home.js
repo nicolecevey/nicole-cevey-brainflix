@@ -6,10 +6,8 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm";
 import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 
-const BASE_URL = "https://project-2-api.herokuapp.com";
-const API_KEY = "891f1817-ac84-4209-a143-55ea13d0e233";
-const apiKeyString = `?api_key=${API_KEY}`;
-const getVideoEndpoint = `${BASE_URL}/videos${apiKeyString}`;
+
+const videoEndpoint = "http://localhost:8085/videos";
 
 class Home extends React.Component {
   state = {
@@ -20,7 +18,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     document.title = "BrainFlix";
-    axios.get(getVideoEndpoint).then((response) => {
+    axios.get(videoEndpoint).then((response) => {
       const activeVideoId = this.props.match.params.id || response.data[0].id;
       this.fetchActiveVideo(activeVideoId).then((activeVideoResponse) => {
         this.setState({
@@ -72,7 +70,7 @@ class Home extends React.Component {
   }
 
   fetchActiveVideo = (videoId) => {
-    return axios.get(`${BASE_URL}/videos/${videoId}${apiKeyString}`);
+    return axios.get(`${videoEndpoint}/${videoId}`);
   };
 
   millisecondsToDate = (milliseconds) => {
