@@ -1,7 +1,7 @@
 import "./UploadForm.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 
-const UploadForm = ({submitHandler}) => {
+const UploadForm = ({onSubmit}) => {
     // Renders upload vieo page
     
     return (
@@ -19,12 +19,13 @@ const UploadForm = ({submitHandler}) => {
                         </img>
                     </div>
                     <form 
-                        onSubmit={submitHandler} 
+                        onSubmit={onSubmit} 
                         className="upload-form">
                         <label className="upload-form__label"> TITLE YOUR VIDEO
                             <input 
                                 placeholder="Add a title to your video"
                                 className="upload-form__title-input"
+                                id="title"
                                 >
                             </input>
                         </label>
@@ -32,6 +33,7 @@ const UploadForm = ({submitHandler}) => {
                             <textarea 
                                 placeholder="Add a description to your video"
                                 className="upload-form__description-input"
+                                id="description"
                                 >
                             </textarea>
                         </label>

@@ -6,7 +6,6 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm";
 import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 
-
 const videoEndpoint = "http://localhost:8085/videos";
 
 class Home extends React.Component {
@@ -35,7 +34,7 @@ class Home extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     const previousId = previousProps.match.params.id;
     const currentId = this.props.match.params.id;
 
