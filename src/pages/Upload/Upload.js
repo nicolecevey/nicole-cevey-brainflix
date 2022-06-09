@@ -6,8 +6,6 @@ function Upload(props) {
 
     const submitHandler = (event) => {
         event.preventDefault();
-
-
         const newVideo = {
             title: event.target.title.value,
             description: event.target.description.value
@@ -25,7 +23,6 @@ function Upload(props) {
               })
             props.history.push("/")
           })
-
     };
 
     return(

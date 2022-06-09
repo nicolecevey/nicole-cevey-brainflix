@@ -68,6 +68,10 @@ p {
     font-weight: 400;
 }
 
+button:hover {
+    background-color: $CTA-hover-color;
+}
+
 .main {
     display: flex;
     flex-direction: column;

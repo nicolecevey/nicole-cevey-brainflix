@@ -5,6 +5,23 @@ import viewsIcon from "../../assets/icons/views.svg"
 const Details = ({selectedVideo, date}) => {
     // Renders details under each video, including title, channel name, date, likes and views
 
+    // const clickHandler = (event) => {
+    //     event.preventDefault();
+
+    //     axios
+    //     .put("http://localhost:8085/videos", newVideo)
+    //     .then(response => {
+    //         console.log(response.data)
+    //         Swal.fire({
+    //             title: 'Success!',
+    //             text: 'Your video has been successfully uploaded',
+    //             icon: 'success',
+    //             confirmButtonText: 'Okay'
+    //           })
+    //         props.history.push("/")
+    //       })
+    // };
+
     return (
         <section className="details">
             <h1 className="details__title">{selectedVideo.title}</h1>
@@ -26,6 +43,7 @@ const Details = ({selectedVideo, date}) => {
                             src={likeIcon} 
                             className="details__icon"
                             alt="Like icon"
+                            // onClick={clickHandler}
                             >
                         </img>
                         <h3>{selectedVideo.likes}</h3>
