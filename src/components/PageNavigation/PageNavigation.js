@@ -1,5 +1,6 @@
-import "./Navigation.scss"
+import "./PageNavigation.scss"
 import logo from "../../assets/logo/BrainFlix-logo.svg";
+import avatar from "../../assets/images/Mohan-muruge.jpg";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -26,7 +27,7 @@ function Nav() {
                     </label>
                 </form>
                 <img 
-                    src={require("../../assets/images/Mohan-muruge.jpg")} 
+                    src={avatar} 
                     className="nav__avatar"
                     alt="Circular headshot of man"
                     >    
@@ -40,7 +41,7 @@ function Nav() {
                 </Link>
                 </button>
             <img 
-                src={require("../../assets/images/Mohan-muruge.jpg")} 
+                src={avatar} 
                 className="nav__avatar nav__avatar--hidden"
                 alt="Circular headshot of man"
                 >    

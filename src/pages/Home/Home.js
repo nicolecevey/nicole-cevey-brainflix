@@ -103,7 +103,7 @@ class Home extends React.Component {
             />
             <CommentsForm comments={selectedVideo.comments}/>
             <Comments
-              comments={selectedVideo && selectedVideo.comments}
+              comments={selectedVideo.comments}
               date={this.millisecondsToDate}
             />
           </div>
