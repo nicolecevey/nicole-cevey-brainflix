@@ -3,6 +3,10 @@ import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 
 const UploadForm = ({onSubmit}) => {
     // Renders upload vieo page
+
+    const clickHandler = (event) => {
+        event.preventDefault()
+    }
     
     return (
         <main className="upload-page">
@@ -38,8 +42,17 @@ const UploadForm = ({onSubmit}) => {
                             </textarea>
                         </label>
                         <div className="upload-form__buttons">
-                            <button className="upload-form__publish-button">PUBLISH</button>
-                            <div className="upload-form__cancel-button">CANCEL</div>
+                            <button 
+                                type="submit" 
+                                className="upload-form__publish-button"
+                                >PUBLISH
+                            </button>
+                            <button 
+                                type="button" 
+                                className="upload-form__cancel-button"
+                                onClick={clickHandler}
+                            >CANCEL
+                            </button>
                         </div>
                     </form>
                 </div>

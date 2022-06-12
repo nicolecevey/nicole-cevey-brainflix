@@ -9,7 +9,6 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 function App(){
 
 	return (
-		<>
 		<BrowserRouter>
 			<PageNavigation/>
 			<Switch>
@@ -19,7 +18,6 @@ function App(){
 				<Route component={NotFoundPage} />
 			</Switch>
 		</BrowserRouter>
-		</>
 	)
 }
 
