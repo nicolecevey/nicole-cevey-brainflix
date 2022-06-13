@@ -91,3 +91,23 @@ button:hover {
         flex-direction: column;
     }
 }
+
+.upload-successful {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    
+    &__text {
+        font-size: 1.5rem;
+    }
+
+    &__button {
+        @include button;
+        width: 1.5rem;
+        max-height: 1.5rem;
+        margin-left: 1rem;
+        padding: 0;
+    }
+
+}

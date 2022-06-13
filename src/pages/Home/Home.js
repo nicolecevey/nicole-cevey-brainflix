@@ -81,6 +81,12 @@ class Home extends React.Component {
     });
   };
 
+  handleClick = (event) => {
+    event.preventDefault();
+    console.log(this.state.uploadSuccessful)
+    return this.props.handleUpload();
+  }
+
   render() {
     const { selectedVideo, videoList } = this.state;
 
@@ -94,6 +100,15 @@ class Home extends React.Component {
 
     return videoList && selectedVideo ? (
       <>
+        {this.props.uploadSuccessful ? 
+          <div className="upload-successful">
+            <h2 className="upload-successful__text">Video Upload Successful!</h2>
+            <button 
+              onClick={this.handleClick}
+              className="upload-successful__button"
+              >&times;</button>
+          </div>
+          : null}
         <Video selectedVideo={selectedVideo.image} />
         <main className="main">
           <div>
