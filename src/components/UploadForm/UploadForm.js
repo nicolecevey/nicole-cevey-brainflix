@@ -1,12 +1,13 @@
 import "./UploadForm.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
+import { Link } from "react-router-dom";
 
 const UploadForm = ({onSubmit}) => {
     // Renders upload vieo page
 
-    const clickHandler = (event) => {
-        event.preventDefault()
-    }
+    // const clickHandler = (event) => {
+    //     event.preventDefault()
+    // }
     
     return (
         <main className="upload-page">
@@ -47,11 +48,12 @@ const UploadForm = ({onSubmit}) => {
                                 className="upload-form__publish-button"
                                 >PUBLISH
                             </button>
-                            <button 
-                                type="button" 
-                                className="upload-form__cancel-button"
-                                onClick={clickHandler}
-                            >CANCEL
+                            <button className="upload-form__cancel-button">
+                                <Link
+                                    to="/" 
+                                    className="upload-form__cancel-link"
+                                    >CANCEL
+                                </Link>
                             </button>
                         </div>
                     </form>

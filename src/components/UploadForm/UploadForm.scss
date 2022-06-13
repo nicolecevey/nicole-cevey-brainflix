@@ -126,4 +126,15 @@
     &__cancel-button {
         @include cancel-button;
     }
+
+    &__cancel-link {
+        color: $CTA-color;
+        height: 1rem;
+        padding: .5rem 2rem;
+        width: 100%;
+
+        &:hover {
+            color: $CTA-font-color;
+        }
+    }
 }

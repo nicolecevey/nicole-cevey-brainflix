@@ -39,7 +39,7 @@ function Nav() {
                     className="nav__button-link"
                     >UPLOAD
                 </Link>
-                </button>
+            </button>
             <img 
                 src={avatar} 
                 className="nav__avatar nav__avatar--hidden"
