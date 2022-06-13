@@ -1,22 +1,10 @@
 import "./CommentsForm.scss";
-import axios from "axios";
 
 const CommentsForm = ({comments}) => {
     // Renders the comment form section to input a new comment
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        // const newComment = {
-        //     comment: event.target.input.value,
-        //     date: 
-        // }
-
-        // axios
-        // .post("http://localhost:8085/videos", newComment)
-        // .then(response => {
-        //     console.log(response.data)
-        //   })
     }
 
     return (

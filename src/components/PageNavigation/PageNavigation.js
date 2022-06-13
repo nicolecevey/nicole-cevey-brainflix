@@ -4,7 +4,7 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import { Link } from "react-router-dom";
 
 function Nav() {
-    // Navbar component
+    // Navbar component which allows users to go back to home page on click of logo or go to upload page on click of button
 
     return (
         <header className="nav">

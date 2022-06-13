@@ -7,7 +7,7 @@ import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
 
-const videoEndpoint = "http://localhost:8085/videos";
+const videoEndpoint = "http://localhost:8080/videos";
 
 class Home extends React.Component {
   state = {
@@ -84,7 +84,6 @@ class Home extends React.Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log(this.state.uploadSuccessful)
     return this.props.handleUpload();
   }
 

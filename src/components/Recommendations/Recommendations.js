@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Recommendations.scss";
 
 const Recommendations = ({videos}) => {
-    // Renders recommended videos section
+    // Renders recommended videos section, which shows next video that users can click on and be taken to
 
     return (
         <section className="recommendations">

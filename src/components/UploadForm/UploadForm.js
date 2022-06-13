@@ -3,11 +3,7 @@ import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { Link } from "react-router-dom";
 
 const UploadForm = ({onSubmit}) => {
-    // Renders upload vieo page
-
-    // const clickHandler = (event) => {
-    //     event.preventDefault()
-    // }
+    // Renders upload video page, which allows users to submit a new video and publish it to the website
     
     return (
         <main className="upload-page">
@@ -31,6 +27,7 @@ const UploadForm = ({onSubmit}) => {
                                 placeholder="Add a title to your video"
                                 className="upload-form__title-input"
                                 id="title"
+                                required
                                 >
                             </input>
                         </label>
@@ -39,6 +36,7 @@ const UploadForm = ({onSubmit}) => {
                                 placeholder="Add a description to your video"
                                 className="upload-form__description-input"
                                 id="description"
+                                required
                                 >
                             </textarea>
                         </label>
