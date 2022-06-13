@@ -5,6 +5,7 @@ import Details from "../../components/Details/Details";
 import CommentsForm from "../../components/CommentsForm/CommentsForm";
 import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
+import "./Home.scss";
 
 const videoEndpoint = "http://localhost:8085/videos";
 
@@ -111,7 +112,7 @@ class Home extends React.Component {
           : null}
         <Video selectedVideo={selectedVideo.image} />
         <main className="main">
-          <div>
+          <div className="video-details">
             <Details
               selectedVideo={selectedVideo}
               date={this.millisecondsToDate}
