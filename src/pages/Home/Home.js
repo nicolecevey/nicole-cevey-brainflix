@@ -7,7 +7,7 @@ import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
 
-const videoEndpoint = "http://localhost:8080/videos";
+const videoEndpoint = `${process.env.REACT_APP_API_ENDPOINT}videos`;
 
 class Home extends React.Component {
   state = {
@@ -18,20 +18,22 @@ class Home extends React.Component {
 
   componentDidMount() {
     document.title = "BrainFlix";
-    axios.get(videoEndpoint).then((response) => {
-      const activeVideoId = this.props.match.params.id || response.data[0].id;
-      this.fetchActiveVideo(activeVideoId).then((activeVideoResponse) => {
+    axios
+      .get(videoEndpoint)
+      .then((response) => {
+        const activeVideoId = this.props.match.params.id || response.data[0].id;
+        this.fetchActiveVideo(activeVideoId).then((activeVideoResponse) => {
+          this.setState({
+            videoList: response.data,
+            selectedVideo: activeVideoResponse.data,
+          });
+        });
+      })
+      .catch((error) => {
         this.setState({
-          videoList: response.data,
-          selectedVideo: activeVideoResponse.data,
+          hasFetchingError: true,
         });
       });
-    })
-    .catch((error) => {
-      this.setState({
-        hasFetchingError: true,
-      });
-    });
   }
 
   componentDidUpdate(previousProps) {
@@ -39,14 +41,14 @@ class Home extends React.Component {
     const previousId = previousProps.match.params.id;
     const currentId = this.props.match.params.id;
 
-      // Only update the active video if we are on a new url!
+    // Only update the active video if we are on a new url!
     if (previousId !== currentId) {
       if (typeof currentId === "undefined") {
         const defaultVideoId = this.state.videoList[0].id;
         return this.fetchActiveVideo(defaultVideoId)
           .then((response) => {
             this.setState({
-              selectedVideo: response.data
+              selectedVideo: response.data,
             });
           })
           .catch((error) => {
@@ -55,17 +57,15 @@ class Home extends React.Component {
             });
           });
       }
-      this.fetchActiveVideo(currentId)
-        .then((response) => {
+      this.fetchActiveVideo(currentId).then((response) => {
+        this.setState({
+          selectedVideo: response.data,
+        }).catch((error) => {
           this.setState({
-            selectedVideo: response.data
-          })
-          .catch((error) => {
-            this.setState({
-              hasFetchingError: true,
-            });
+            hasFetchingError: true,
           });
         });
+      });
     }
   }
 
@@ -85,7 +85,7 @@ class Home extends React.Component {
   handleClick = (event) => {
     event.preventDefault();
     return this.props.handleUpload();
-  }
+  };
 
   render() {
     const { selectedVideo, videoList } = this.state;
@@ -100,15 +100,19 @@ class Home extends React.Component {
 
     return videoList && selectedVideo ? (
       <>
-        {this.props.uploadSuccessful ? 
+        {this.props.uploadSuccessful ? (
           <div className="upload-successful">
-            <h2 className="upload-successful__text">Video Upload Successful!</h2>
-            <button 
+            <h2 className="upload-successful__text">
+              Video Upload Successful!
+            </h2>
+            <button
               onClick={this.handleClick}
               className="upload-successful__button"
-              >&times;</button>
+            >
+              &times;
+            </button>
           </div>
-          : null}
+        ) : null}
         <Video selectedVideo={selectedVideo.image} />
         <main className="main">
           <div className="video-details">
@@ -116,7 +120,7 @@ class Home extends React.Component {
               selectedVideo={selectedVideo}
               date={this.millisecondsToDate}
             />
-            <CommentsForm comments={selectedVideo.comments}/>
+            <CommentsForm comments={selectedVideo.comments} />
             <Comments
               comments={selectedVideo.comments}
               date={this.millisecondsToDate}
