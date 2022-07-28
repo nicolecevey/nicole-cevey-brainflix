@@ -13,12 +13,10 @@ function Upload(props) {
       image: uploadImage,
     };
 
-    axios
-      .post(`${process.env.REACT_APP_API_ENDPOINT}videos`, newVideo)
-      .then((response) => {
-        props.handleUpload();
-        props.history.push("/");
-      });
+    axios.post("http://localhost:8080/videos", newVideo).then((response) => {
+      props.handleUpload();
+      props.history.push("/");
+    });
   };
 
   return (

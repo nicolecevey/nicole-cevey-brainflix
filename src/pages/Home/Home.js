@@ -7,7 +7,7 @@ import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
 
-const videoEndpoint = `${process.env.REACT_APP_API_ENDPOINT}videos`;
+const videoEndpoint = "http://localhost:8080/videos";
 
 class Home extends React.Component {
   state = {
