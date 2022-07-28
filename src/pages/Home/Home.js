@@ -7,7 +7,7 @@ import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
 
-const videoEndpoint = "http://localhost:11500/videos";
+const videoEndpoint = "http://localhost:53905/videos";
 
 class Home extends React.Component {
   state = {

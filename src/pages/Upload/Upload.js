@@ -13,7 +13,7 @@ function Upload(props) {
       image: uploadImage,
     };
 
-    axios.post("http://localhost:11500/videos", newVideo).then((response) => {
+    axios.post("http://localhost:53905/videos", newVideo).then((response) => {
       props.handleUpload();
       props.history.push("/");
     });
