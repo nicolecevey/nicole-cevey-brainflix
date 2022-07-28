@@ -5,6 +5,11 @@ import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 function Upload(props) {
   // This page takes users form input and sends data to server so it can be posted to site
 
+  const API =
+    process.env.NODE_ENV === "production"
+      ? "https://nicole-cevey-brainflix.herokuapp.com"
+      : "http://localhost:8080";
+
   const submitHandler = (event) => {
     event.preventDefault();
     const newVideo = {
@@ -13,7 +18,7 @@ function Upload(props) {
       image: uploadImage,
     };
 
-    axios.post("http://localhost:53905/videos", newVideo).then((response) => {
+    axios.post(`${API}videos`, newVideo).then((response) => {
       props.handleUpload();
       props.history.push("/");
     });
