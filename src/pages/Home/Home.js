@@ -6,8 +6,9 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm";
 import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
+import { v4 as uuid } from "uuid";
 
-const videoEndpoint = "https://nicole-cevey-brainflix.herokuapp.com/videos";
+const videoEndpoint = "http://localhost:8080/videos";
 
 class Home extends React.Component {
   state = {
@@ -57,15 +58,17 @@ class Home extends React.Component {
             });
           });
       }
-      this.fetchActiveVideo(currentId).then((response) => {
-        this.setState({
-          selectedVideo: response.data,
-        }).catch((error) => {
+      this.fetchActiveVideo(currentId)
+        .then((response) => {
+          this.setState({
+            selectedVideo: response.data,
+          });
+        })
+        .catch((error) => {
           this.setState({
             hasFetchingError: true,
           });
         });
-      });
     }
   }
 
@@ -80,6 +83,29 @@ class Home extends React.Component {
       day: "2-digit",
       year: "numeric",
     });
+  };
+
+  postComment = (event, videoId) => {
+    event.preventDefault();
+    axios
+      .post(`${videoEndpoint}/${videoId}/comments`, {
+        name: "Mohan Muruge",
+        comment: event.target.comment.value,
+        id: uuid(),
+        likes: 0,
+        timestamp: Date.now(),
+      })
+      .then((res) => {
+        // make a copy of the current state to prevent direct changes to state
+        const postCommentCopyState = { ...this.state.selectedVideo };
+        // push new comment response into state copy
+        postCommentCopyState.comments.push(res.data);
+        // setState with modified copy of state
+        this.setState({ selectedVideo: postCommentCopyState });
+      })
+      .catch((err) => console.error(err));
+    // clear input field
+    event.target.reset();
   };
 
   handleClick = (event) => {
@@ -120,7 +146,11 @@ class Home extends React.Component {
               selectedVideo={selectedVideo}
               date={this.millisecondsToDate}
             />
-            <CommentsForm comments={selectedVideo.comments} />
+            <CommentsForm
+              comments={selectedVideo.comments}
+              postComment={this.postComment}
+              selectedVideoId={selectedVideo.id}
+            />
             <Comments
               comments={selectedVideo.comments}
               date={this.millisecondsToDate}
