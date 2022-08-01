@@ -126,6 +126,16 @@ class Home extends React.Component {
     return this.props.handleUpload();
   };
 
+  handleLike = (event, videoId) => {
+    event.preventDefault();
+    axios
+      .put(`${videoEndpoint}/${videoId}/likes`)
+      .then((response) => {
+        this.setState({ selectedVideo: response.data });
+      })
+      .catch((error) => console.log("Video not found", error));
+  };
+
   render() {
     const { selectedVideo, videoList } = this.state;
 
@@ -158,6 +168,7 @@ class Home extends React.Component {
             <Details
               selectedVideo={selectedVideo}
               date={this.millisecondsToDate}
+              handleLike={this.handleLike}
             />
             <CommentsForm
               comments={selectedVideo.comments}

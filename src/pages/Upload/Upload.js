@@ -1,6 +1,7 @@
 import UploadForm from "../../components/UploadForm/UploadForm";
 import axios from "axios";
 import uploadImage from "../../assets/images/Upload-video-preview.jpg";
+import { v4 as uuid } from "uuid";
 
 function Upload(props) {
   // This page takes users form input and sends data to server so it can be posted to site
@@ -14,11 +15,15 @@ function Upload(props) {
     };
 
     axios
-      .post("https://nicole-cevey-brainflix.herokuapp.com/videos", newVideo)
+      .post("http://localhost:8080/videos", newVideo)
       .then((response) => {
         props.handleUpload();
         props.history.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
       });
+    event.target.reset();
   };
 
   return (
