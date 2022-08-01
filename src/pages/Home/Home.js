@@ -38,7 +38,7 @@ class Home extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const previousId = previousProps.match.params.id;
     const currentId = this.props.match.params.id;
 
@@ -60,6 +60,7 @@ class Home extends React.Component {
       }
       this.fetchActiveVideo(currentId)
         .then((response) => {
+          window.scrollTo(0, 0);
           this.setState({
             selectedVideo: response.data,
           });
@@ -96,16 +97,28 @@ class Home extends React.Component {
         timestamp: Date.now(),
       })
       .then((res) => {
-        // make a copy of the current state to prevent direct changes to state
-        const postCommentCopyState = { ...this.state.selectedVideo };
-        // push new comment response into state copy
-        postCommentCopyState.comments.push(res.data);
-        // setState with modified copy of state
-        this.setState({ selectedVideo: postCommentCopyState });
+        const video = { ...this.state.selectedVideo };
+        video.comments.unshift(res.data);
+        this.setState({ selectedVideo: video });
       })
       .catch((err) => console.error(err));
-    // clear input field
     event.target.reset();
+  };
+
+  deleteComment = (event, videoId, commentId) => {
+    event.preventDefault();
+    axios
+      .delete(`${videoEndpoint}/${videoId}/comments/${commentId}`)
+      .then(() => {
+        const video = { ...this.state.selectedVideo };
+        console.log(video.comments);
+        const newCommentsArray = video.comments.filter(
+          (comment) => comment.id !== commentId
+        );
+        video.comments = newCommentsArray;
+        this.setState({ selectedVideo: video });
+      })
+      .catch((error) => console.log(error));
   };
 
   handleClick = (event) => {
@@ -154,6 +167,8 @@ class Home extends React.Component {
             <Comments
               comments={selectedVideo.comments}
               date={this.millisecondsToDate}
+              deleteComment={this.deleteComment}
+              selectedVideoId={selectedVideo.id}
             />
           </div>
           <Recommendations videos={filteredVideos} />

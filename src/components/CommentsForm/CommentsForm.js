@@ -3,11 +3,6 @@ import "./CommentsForm.scss";
 const CommentsForm = ({ comments, postComment, selectedVideoId }) => {
   // Renders the comment form section to input a new comment
 
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     postComment(event, selectedVideoId);
-  //   };
-
   return (
     <section className="comments-form">
       <h2>{`${comments.length} Comments`}</h2>
