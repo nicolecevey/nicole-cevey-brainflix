@@ -12,6 +12,8 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "5.3",
     "react-scripts": "5.0.1",
+    "react-spinkit": "^3.0.0",
+    "react-spinners": "^0.13.4",
     "sass": "^1.52.1",
     "util": "^0.12.4",
     "uuid": "^8.3.2",

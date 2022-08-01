@@ -7,6 +7,7 @@ import Recommendations from "../../components/Recommendations/Recommendations";
 import Comments from "../../components/Comments/Comments";
 import "./Home.scss";
 import { v4 as uuid } from "uuid";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const videoEndpoint = "http://localhost:8080/videos";
 
@@ -15,6 +16,7 @@ class Home extends React.Component {
     selectedVideo: null,
     videoList: [],
     hasFetchingError: false,
+    loading: true,
   };
 
   componentDidMount() {
@@ -186,7 +188,14 @@ class Home extends React.Component {
         </main>
       </>
     ) : (
-      <h1>Loading...</h1>
+      <div className="spinner">
+        <ClipLoader
+          size={150}
+          color={"#0095FF"}
+          loading={this.state.loading}
+          speedMultiplier={0.75}
+        />
+      </div>
     );
   }
 }
