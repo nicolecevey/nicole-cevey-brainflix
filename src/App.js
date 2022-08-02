@@ -11,11 +11,13 @@ class App extends React.Component {
     uploadSuccessful: false,
   };
 
+  // Handle upload of new video
   handleUpload = () => {
+    // Set state to show whether upload was successful
+    // Will be used for success message
     this.setState({
       uploadSuccessful: !this.state.uploadSuccessful,
     });
-    console.log(this.state);
   };
 
   render() {
