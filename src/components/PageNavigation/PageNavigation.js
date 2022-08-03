@@ -23,11 +23,9 @@ function Nav() {
           alt="Circular headshot of man"
         ></img>
       </div>
-      <button className="nav__button">
-        <Link to="/upload" className="nav__button-link">
-          UPLOAD
-        </Link>
-      </button>
+      <Link to="/upload" className="nav__upload-link">
+        UPLOAD
+      </Link>
       <img
         src={avatar}
         className="nav__avatar nav__avatar--hidden"

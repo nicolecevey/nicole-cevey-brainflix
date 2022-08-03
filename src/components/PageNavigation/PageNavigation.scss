@@ -76,18 +76,26 @@
         }
     }
 
-    &__button {
+    &__upload-link {
+        color: $CTA-font-color;
         background: url(../../assets/icons/upload.svg) .5rem no-repeat;
         @include button;
-        margin-top: 1rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 1rem 0 1rem;
+        padding: .5rem 0;
+        font-weight: 500;
 
         @include tablet {
             margin: 0 0 0 1rem;
+            height: 1.75rem;
         }
-    }
 
-    &__button-link {
-        color: $CTA-font-color;
+        &:hover {
+            background-color: $CTA-hover-color;
+        }
     }
 
     &__avatar {
