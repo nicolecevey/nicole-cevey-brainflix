@@ -14,7 +14,7 @@ function Upload(props) {
     };
 
     axios
-      .post("https://nicole-cevey-brainflix.herokuapp.com/videos", newVideo)
+      .post("https://nicole-cevey-brainflix-api.vercel.app/videos", newVideo)
       .then((response) => {
         props.handleUpload();
         props.history.push("/");
