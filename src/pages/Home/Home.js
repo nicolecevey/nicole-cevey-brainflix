@@ -9,7 +9,7 @@ import "./Home.scss";
 import { v4 as uuid } from "uuid";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const videoEndpoint = "https://nicole-cevey-brainflix.herokuapp.com/videos";
+const videoEndpoint = "https://nicole-cevey-brainflix-api.vercel.app/videos";
 
 class Home extends React.Component {
   state = {
